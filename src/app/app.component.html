@@ -1,0 +1,15 @@
+<filter-tree></filter-tree>
+<table-overview-example></table-overview-example>
+<div
+  class="drop-overlay"
+  *ngIf="isDragging"
+  (dragleave)="onDragleave($event)"
+  (mouseleave)="onDragleave($event)"
+>
+  <div class="drop-overlay_message">
+    <mat-icon [inline]="true" class="material-symbols-outlined"
+      >place_item</mat-icon
+    >
+    <div>5 Dokumente ablegen...</div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  gap: 16px;
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+}
+
+.drop-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #fafafa9c;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  .drop-overlay_message {
+    padding: 16px 32px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 500px;
+
+    .mat-icon {
+      font-size: 64px;
+      color: #37c391;
+    }
+  }
+}
+
+filter-tree {
+  max-height: calc(100vh - 16px * 2);
+  position: sticky;
+  top: 16px;
+}
