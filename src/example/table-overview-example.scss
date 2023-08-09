@@ -9,7 +9,7 @@ table {
 
 :host::ng-deep thead tr {
   &::after {
-    background-color: rgb(247, 247, 247);
+    background-color: #fafafa;
     content: '';
     display: block;
     position: absolute;
@@ -91,6 +91,10 @@ td.mat-column-name {
 
 .mat-mdc-table .mat-column-type {
   padding-left: 32px;
+
+  .mat-icon {
+    vertical-align: middle;
+  }
 }
 
 .mat-column-type,
