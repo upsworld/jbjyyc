@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
-import { SlcAblageComponentComponent } from './ablage-component/ablage-component.component';
+import { SlcAblageComponent } from './ablage-component/ablage-component.component';
 import { SlDocuments } from './model/document-model';
 
 /** Constants used to fill up our data base. */
@@ -50,10 +50,8 @@ export class AppComponent {
   }
 
   openDocument() {
-    this.dialog.open(SlcAblageComponentComponent, {
-      data: {
-
-      }
+    this.dialog.open(SlcAblageComponent, {
+      data: {},
     });
   }
 
