@@ -11,10 +11,15 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SlcAblageComponentComponent } from './ablage-component/ablage-component.component';
 import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
+import { MatButtonModule } from '@angular/material/button';
 
 /* the AppModule class with the @NgModule decorator */
 @NgModule({
-  declarations: [AppComponent, ExamplePdfViewerComponent, SlcAblageComponentComponent],
+  declarations: [
+    AppComponent,
+    ExamplePdfViewerComponent,
+    SlcAblageComponentComponent,
+  ],
   imports: [
     FilterTreeComponent,
     BrowserModule,
@@ -22,7 +27,8 @@ import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-view
     BrowserAnimationsModule,
     MatIconModule,
     NgxExtendedPdfViewerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

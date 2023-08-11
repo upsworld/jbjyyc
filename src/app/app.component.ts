@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
+import { SlcAblageComponentComponent } from './ablage-component/ablage-component.component';
 
 @Component({
   selector: 'main-app',
@@ -21,6 +22,10 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(ExamplePdfViewerComponent);
+  }
+
+  openDocument() {
+    this.dialog.open(SlcAblageComponentComponent);
   }
 
   onDragleave(evt: any) {

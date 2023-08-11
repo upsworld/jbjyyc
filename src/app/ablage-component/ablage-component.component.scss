@@ -1,0 +1,16 @@
+.mat-mdc-dialog-content {
+  background-color: #fafafa;
+}
+
+button[color='primary'] {
+  color: white !important;
+  background-color: #37c391 !important;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+mat-dialog-actions {
+  justify-content: space-between;
+}
