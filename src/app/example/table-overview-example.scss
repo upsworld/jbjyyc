@@ -5,6 +5,10 @@ table {
 :host {
   flex-grow: 1;
   position: relative;
+
+  &:not(.show-table-header) .mat-mdc-header-row {
+    display: none;
+  }
 }
 
 :host::ng-deep thead tr {

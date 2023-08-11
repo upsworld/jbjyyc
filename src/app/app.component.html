@@ -1,5 +1,12 @@
 <filter-tree (click)="openDialog()"></filter-tree>
-<table-overview-example (click)="openDocument()"></table-overview-example>
+<table-overview-example
+  (click)="openDocument()"
+  [showPagination]="true"
+  [showSearchField]="true"
+  [showAddButton]="true"
+  [showTableHeader]="true"
+  [data]="documents"
+></table-overview-example>
 <div
   class="drop-overlay"
   *ngIf="isDragging"

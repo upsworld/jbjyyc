@@ -1,5 +1,5 @@
-<div class="toolbar">
-  <mat-form-field subscriptSizing="dynamic">
+<div class="toolbar" *ngIf="showToolbar">
+  <mat-form-field subscriptSizing="dynamic" *ngIf="showSearchField">
     <mat-label>Liste durchsuchen...</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
@@ -124,7 +124,8 @@
     <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">
-        No data matching the filter "{{input.value}}"
+        No data matching the filter
+        <!--"{{input.value}}"//-->
       </td>
     </tr>
   </table>
@@ -133,5 +134,6 @@
     [pageSizeOptions]="[5, 10, 25, 50, 100]"
     aria-label="Select page of users"
     [pageSize]="25"
+    *ngIf="showPagination"
   ></mat-paginator>
 </div>

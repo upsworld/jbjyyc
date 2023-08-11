@@ -17,30 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CdkTextareaAutosize, TextFieldModule } from '@angular/cdk/text-field';
 import { MatSelectModule } from '@angular/material/select';
-
-export interface UserData {
-  time: string;
-  name: string;
-  progress: string;
-  schlagwort: string;
-  type: 'documents';
-}
-
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  '/Vertrag/Objekt Lieferant/Rechnung',
-  '/Allgemein/Schriftverkehr',
-  '/43533433/1/Unterlagen/Sonstiges Unterlagen',
-  '/Vertrag/Unterlagen/Zahlungsauftrag',
-  '/Vertrag/Unterlagen/Vertragsabrechnung',
-];
-const NAMES: string[] = [
-  'Mietkauf',
-  'Leasing',
-  'Übernahmebestätigung',
-  'Gesamtübersicht nach Abrechnung',
-  'Abrechnung/Mietkaufvertrag/01/2012 Zahlungsplan',
-];
+import { SlDocuments } from '../model/document-model';
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -66,30 +43,37 @@ const NAMES: string[] = [
 })
 export class TableOverviewExample implements OnInit, AfterViewInit {
   displayedColumns: string[];
-  dataSource: MatTableDataSource<UserData>;
+  dataSource: MatTableDataSource<SlDocuments>;
 
-  @Input() editable = true;
+  @Input() editable = false;
+  @Input() showAddButton = false;
+  @Input() showSearchField = false;
+  @Input() showPagination = false;
+  @Input() showTableHeader = false;
+  @Input() limit: number;
+  @Input() data: SlDocuments[];
+
+  get showToolbar() {
+    return this.showPagination || this.showAddButton;
+  }
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @HostBinding('class.editable') get editableClass() {
     return this.editable;
   }
-
-  constructor() {
-    // Create 100 users
-    let time = Date.now();
-    const users = Array.from({ length: 100 }, (_, k) => {
-      time -= Math.round(Math.random() * 86400000 * 3);
-      return createNewUser(k + 1, time);
-    });
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  @HostBinding('class.show-table-header') get tableHeaderClass() {
+    return this.showTableHeader;
   }
 
+  constructor() {}
+
   ngOnInit() {
+    // Assign the data to the data source for the table to render
+    this.dataSource = new MatTableDataSource(this.data);
+
     this.displayedColumns = this.editable
-      ? ['type', 'name', 'vertrag', 'schlagwort']
+      ? ['type', 'name', 'schlagwort', 'vertrag']
       : ['type', 'name', 'schlagwort', 'time'];
   }
 
@@ -113,22 +97,4 @@ export class TableOverviewExample implements OnInit, AfterViewInit {
   getAfterLastSlash(str: string) {
     return str.slice(str.lastIndexOf('/') + 1);
   }
-}
-
-/** Builds and returns a new User. */
-function createNewUser(id: number, time: number): UserData {
-  let name = NAMES[Math.round(Math.random() * (NAMES.length - 1))];
-
-  const counter = Math.round(Math.random() * 6);
-  if (counter > 1) {
-    name += ' (' + counter.toString() + ')';
-  }
-
-  return {
-    time: time.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    schlagwort: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-    type: 'documents',
-  };
 }
