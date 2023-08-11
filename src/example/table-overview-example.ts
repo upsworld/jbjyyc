@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ViewChild, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  OnInit,
+  Component,
+  ViewChild,
+  Input,
+  HostBinding,
+} from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -8,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { CdkTextareaAutosize, TextFieldModule } from '@angular/cdk/text-field';
+import { MatSelectModule } from '@angular/material/select';
 
 export interface UserData {
   time: string;
@@ -21,7 +30,7 @@ export interface UserData {
 const FRUITS: string[] = [
   '/Vertrag/Objekt Lieferant/Rechnung',
   '/Allgemein/Schriftverkehr',
-  '/Vertrag/Unterlagen/Sonstiges Unterlagen',
+  '/43533433/1/Unterlagen/Sonstiges Unterlagen',
   '/Vertrag/Unterlagen/Zahlungsauftrag',
   '/Vertrag/Unterlagen/Vertragsabrechnung',
 ];
@@ -51,15 +60,20 @@ const NAMES: string[] = [
     CommonModule,
     MatIconModule,
     MatButtonModule,
+    TextFieldModule,
+    MatSelectModule,
   ],
 })
-export class TableOverviewExample implements AfterViewInit {
-  displayedColumns: string[] = ['type', 'name', 'schlagwort', 'time'];
+export class TableOverviewExample implements OnInit, AfterViewInit {
+  displayedColumns: string[];
   dataSource: MatTableDataSource<UserData>;
 
   @Input() editable = true;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  @HostBinding('class.editable') get editableClass() {
+    return this.editable;
+  }
 
   constructor() {
     // Create 100 users
@@ -71,6 +85,12 @@ export class TableOverviewExample implements AfterViewInit {
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+  }
+
+  ngOnInit() {
+    this.displayedColumns = this.editable
+      ? ['type', 'name', 'vertrag', 'schlagwort']
+      : ['type', 'name', 'schlagwort', 'time'];
   }
 
   ngAfterViewInit() {

@@ -51,15 +51,70 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      <td mat-cell *matCellDef="let row">
+        <ng-container *ngIf="!editable">{{row.name}}</ng-container>
+
+        <mat-form-field
+          class="example-full-width"
+          subscriptSizing="dynamic"
+          *ngIf="editable"
+        >
+          <mat-label>Name</mat-label>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            value="{{row.name}}"
+            (click)="$event.stopPropagation()"
+          ></textarea>
+        </mat-form-field>
+      </td>
     </ng-container>
 
-    <!-- Fruit Column -->
+    <!-- Schlagwort Column -->
     <ng-container matColumnDef="schlagwort">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Schlagwort</th>
       <td mat-cell *matCellDef="let row">
-        <small>{{getBeforeLastSlash(row.schlagwort)}}</small>
-        <div>{{getAfterLastSlash(row.schlagwort)}}</div>
+        <ng-container *ngIf="!editable">
+          <small>{{getBeforeLastSlash(row.schlagwort)}}</small>
+          <div>{{getAfterLastSlash(row.schlagwort)}}</div>
+        </ng-container>
+
+        <mat-form-field
+          class="example-full-width"
+          subscriptSizing="dynamic"
+          *ngIf="editable"
+        >
+          <mat-label>Schlagwort</mat-label>
+          <mat-select value="{{getAfterLastSlash(row.schlagwort)}}">
+            <mat-option value="{{getAfterLastSlash(row.schlagwort)}}"
+              >{{getAfterLastSlash(row.schlagwort)}}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </ng-container>
+
+    <!-- Vertrag und Teilvertrag Column -->
+    <ng-container matColumnDef="vertrag">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Vertrag</th>
+      <td mat-cell *matCellDef="let row">
+        <div class="vertrag" *ngIf="editable">
+          <mat-form-field subscriptSizing="dynamic">
+            <mat-label>Vertrag</mat-label>
+            <mat-select value="24545245">
+              <mat-option value="24545245">24545245</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic">
+            <mat-label>Teil</mat-label>
+            <mat-select value="1">
+              <mat-option value="1">1</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </td>
     </ng-container>
 
@@ -75,7 +130,7 @@
   </table>
 
   <mat-paginator
-    [pageSizeOptions]="[10, 25, 50, 100]"
+    [pageSizeOptions]="[5, 10, 25, 50, 100]"
     aria-label="Select page of users"
     [pageSize]="25"
   ></mat-paginator>

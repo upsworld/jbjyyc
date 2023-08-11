@@ -79,8 +79,18 @@ td.mat-column-name {
   justify-content: flex-end;
 }
 
-.mat-mdc-table {
-  .mat-column-time {
+th,
+td {
+  width: 25%;
+  padding: 16px;
+}
+
+.mat-mdc-table th, 
+.mat-mdc-table td {
+  &:first-child {
+    padding-left: 32px;
+  }
+  &:last-child {
     padding-right: 32px;
   }
 }
@@ -119,7 +129,25 @@ td.mat-column-name {
   }
 }
 
-td,
-th {
-  width: 25%;
+:host.edtiable {
+  tr.mat-mdc-table .mdc-data-table__row {
+    height: auto;
+  }
+}
+
+.vertrag {
+  display: flex;
+  gap: 4px;
+
+  .mat-mdc-form-field:first-child {
+    max-width: 130px;
+  }
+
+  .mat-mdc-form-field:last-child {
+    max-width: 80px;
+  }
+}
+
+mat-label {
+  text-transform: uppercase;
 }
