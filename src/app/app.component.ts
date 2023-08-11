@@ -51,7 +51,7 @@ export class AppComponent {
 
   openDocument() {
     this.dialog.open(SlcAblageComponent, {
-      data: {},
+      data: [this.documents[0]],
     });
   }
 
