@@ -50,7 +50,11 @@ export class AppComponent {
   }
 
   openDocument() {
-    this.dialog.open(SlcAblageComponentComponent);
+    this.dialog.open(SlcAblageComponentComponent, {
+      data: {
+
+      }
+    });
   }
 
   onDragleave(evt: any) {

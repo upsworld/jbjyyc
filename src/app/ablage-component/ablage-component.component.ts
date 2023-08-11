@@ -6,8 +6,8 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './ablage-component.component.html',
   styleUrls: ['./ablage-component.component.scss'],
 })
-export class SlcAblageComponentComponent {
-  constructor(private dialogRef: MatDialogRef<SlcAblageComponentComponent>) {}
+export class SlcAblageComponent {
+  constructor(private dialogRef: MatDialogRef<SlcAblageComponent>) {}
 
   cancel() {
     this.dialogRef.close();
