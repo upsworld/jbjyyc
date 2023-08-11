@@ -1,4 +1,5 @@
-import { Component, HostListener, HostBinding } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'main-app',
@@ -14,6 +15,8 @@ export class AppComponent {
     console.log('dragenter');
     this.isDragging = true;
   }
+
+  constructor(private dialog: MatDialog) {}
 
   onDragleave(evt: any) {
     evt.preventDefault();

@@ -8,6 +8,7 @@ import { FilterTreeComponent } from './filter-tree/filter-tree.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { MatDialogModule } from '@angular/material/dialog';
 
 /* the AppModule class with the @NgModule decorator */
 @NgModule({
@@ -19,6 +20,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     BrowserAnimationsModule,
     MatIconModule,
     NgxExtendedPdfViewerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
