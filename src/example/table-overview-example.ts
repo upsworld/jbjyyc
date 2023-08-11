@@ -1,8 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ViewChild, Input } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -61,6 +57,7 @@ export class TableOverviewExample implements AfterViewInit {
   displayedColumns: string[] = ['type', 'name', 'schlagwort', 'time'];
   dataSource: MatTableDataSource<UserData>;
 
+  @Input() editable = true;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -74,8 +71,6 @@ export class TableOverviewExample implements AfterViewInit {
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
-
-
   }
 
   ngAfterViewInit() {
