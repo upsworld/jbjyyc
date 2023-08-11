@@ -8,9 +8,7 @@ import {
   VERSION as MAT_VERSION,
   MatNativeDateModule,
 } from '@angular/material/core';
-import { TableOverviewExample } from './example/table-overview-example';
-import { AppModule } from './app/app.module';
-import { AppComponent } from './app/app.component';
+import { AppModule } from './app.module';
 
 /* eslint-disable no-console */
 console.info('Angular CDK version', CDK_VERSION.full);
