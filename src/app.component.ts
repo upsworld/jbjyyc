@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
 
 @Component({
   selector: 'main-app',
@@ -17,6 +18,10 @@ export class AppComponent {
   }
 
   constructor(private dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(ExamplePdfViewerComponent);
+  }
 
   onDragleave(evt: any) {
     evt.preventDefault();
