@@ -1,11 +1,12 @@
 <filter-tree (click)="openDialog()"></filter-tree>
 <table-overview-example
-  (click)="openDocument()"
+  (clickDocument)="openDocument($event)"
   [showPagination]="true"
   [showSearchField]="true"
   [showAddButton]="true"
   [showTableHeader]="true"
   [data]="documents"
+  
 ></table-overview-example>
 <div
   class="drop-overlay"

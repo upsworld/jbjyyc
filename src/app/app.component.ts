@@ -39,7 +39,7 @@ export class AppComponent {
   @HostListener('drop', ['$event ']) onDrop(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    this.openDocument();
+    //this.openDocument();
     this.isDragging = false;
   }
 
@@ -75,9 +75,9 @@ export class AppComponent {
     this.dialog.open(ExamplePdfViewerComponent);
   }
 
-  openDocument() {
+  openDocument(document: SlDocuments) {
     this.dialog.open(SlcAblageComponent, {
-      data: [this.documents[0]],
+      data: [document],
     });
   }
 

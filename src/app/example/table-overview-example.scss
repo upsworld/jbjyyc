@@ -46,6 +46,10 @@ small {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.mdc-data-table__row {
+  position: relative;
+}
+
 .mat-mdc-table .mat-mdc-cell,
 .mat-mdc-table .mat-mdc-header-cell {
   background-color: white;
@@ -89,7 +93,7 @@ td {
   padding: 16px;
 }
 
-.mat-mdc-table th, 
+.mat-mdc-table th,
 .mat-mdc-table td {
   &:first-child {
     padding-left: 32px;
@@ -154,4 +158,13 @@ td {
 
 mat-label {
   text-transform: uppercase;
+}
+
+mat-progress-bar {
+  position: absolute;
+  bottom: 4px;
+  left: 32px;
+  right: 32px;
+  height: 4px;
+  width: auto;
 }

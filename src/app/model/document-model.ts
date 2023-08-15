@@ -4,4 +4,5 @@ export interface SlDocuments {
   progress: string;
   schlagwort: string;
   type: 'documents';
+  isLoading?: boolean;
 }
