@@ -12,6 +12,7 @@
   *ngIf="isDragging"
   (dragleave)="onDragleave($event)"
   (mouseleave)="onDragleave($event)"
+  (drop)="onDrop($event)"
 >
   <div class="drop-overlay_message">
     <mat-icon [inline]="true" class="material-symbols-outlined"

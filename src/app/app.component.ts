@@ -36,6 +36,13 @@ export class AppComponent {
     this.isDragging = true;
   }
 
+  @HostListener('drop', ['$event ']) onDrop(evt: any) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    this.openDocument();
+    this.isDragging = false;
+  }
+
   constructor(private dialog: MatDialog) {
     // Create 100 users
     let time = Date.now();
@@ -43,6 +50,25 @@ export class AppComponent {
       time -= Math.round(Math.random() * 86400000 * 3);
       return createNewUser(k + 1, time);
     });
+
+    // how to solve this? these need to be removed when this component is
+    // destroyed - at least
+    window.addEventListener(
+      'dragover',
+      function (e) {
+        e = e || event;
+        e.preventDefault();
+      },
+      false
+    );
+    window.addEventListener(
+      'drop',
+      function (e) {
+        e = e || event;
+        e.preventDefault();
+      },
+      false
+    );
   }
 
   openDialog() {
