@@ -27,7 +27,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -49,7 +49,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatButtonModule,
     TextFieldModule,
     MatSelectModule,
-    MatProgressBarModule,
+    MatProgressSpinnerModule,
   ],
   animations: [
     trigger('detailExpand', [

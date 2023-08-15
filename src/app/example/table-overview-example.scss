@@ -46,10 +46,6 @@ small {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.mdc-data-table__row {
-  position: relative;
-}
-
 .mat-mdc-table .mat-mdc-cell,
 .mat-mdc-table .mat-mdc-header-cell {
   background-color: white;
@@ -108,7 +104,7 @@ td {
 }
 
 .mat-mdc-table .mat-column-type {
-  padding-left: 32px;
+  position: relative;
 
   .mat-icon {
     vertical-align: middle;
@@ -160,11 +156,12 @@ mat-label {
   text-transform: uppercase;
 }
 
-mat-progress-bar {
+mat-spinner {
   position: absolute;
-  bottom: 4px;
-  left: 32px;
-  right: 32px;
-  height: 4px;
+  margin-left: -8px;
+  margin-top: -20px;
+  top: 50%;
+  left: 50%;
   width: auto;
+  color: #37c391;
 }
