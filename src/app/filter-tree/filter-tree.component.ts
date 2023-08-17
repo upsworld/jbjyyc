@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { BehaviorSubject } from 'rxjs';
-import { TREE_DATA_GP, AUFGABEN, AUFGABENARTEN } from './tree-data';
+import { TREE_DATA_GP, TREE_CATEGORIES, AUFGABEN, AUFGABENARTEN } from './tree-data';
 
 /**
  * Node for to-do item
@@ -137,7 +137,7 @@ export class ChecklistDatabase {
   initialize() {
     // Build the tree nodes from Json object. The result is a list of `TodoItemNode` with nested
     //     file node as children.
-    const data = this.buildFileTree(TREE_DATA_GP, 0);
+    const data = this.buildFileTree(TREE_CATEGORIES, 0);
 
     // Notify the change.
     this.dataChange.next(data);

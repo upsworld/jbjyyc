@@ -179,45 +179,52 @@ export const TREE_DATA_GP = {
       },
     },
   },
-  /*'Lorem Ipsum GmbH': {
-    'Verträge (2)': {
-      '49499444 Große Bagger': {
-        'Teilverträge (4)': {
-          '49499444 / 1': null,
-          '49499444 / 2': null,
-          '49499444 / 3': null,
-          '49499444 / 4': null,
-        },
-        'Dokumente (8)': {
-          'Provision (3)': [
-            'Provisionsabrechnung (2)',
-            'Lorem Ipsum Schlagwort (1)',
-          ],
-          'Unterlagen (5)': ['Blueberry', 'Raspberry'],
-        },
-      },
-      '49444477 Kleine Bagger': {
-        'Teilverträge (4)': {
-          '49499444 / 1': null,
-          '49499444 / 2': null,
-          '49499444 / 3': null,
-          '49499444 / 4': null,
-        },
-        'Dokumente (8)': {
-          'Provision (3)': [
-            'Provisionsabrechnung (2)',
-            'Lorem Ipsum Schlagwort (1)',
-          ],
-          'Unterlagen (5)': ['Blueberry', 'Raspberry'],
-        },
-      },
+};
+
+export const TREE_CATEGORIES = {
+  'Vertragsakte (18)': {
+    'Beeendigung (1)': null,
+    'Buchung (1)': null,
+    'Objekt Lieferant (1)': null,
+    'Provision (3)': null,
+    'Refinanzierung (1)': null,
+    'Sicherheiten (1)': null,
+    'Unterlagen (8)': null,
+    'Versicherungen (2)': null,
+  },
+  'Kundenakte (4022)': {
+    'Allgemein (245)': {
+      'Angebote (12)': null,
+      'Information (255)': null,
+      'Information - Rechtlich (0)': null,
+      'Legitimation (0)': null,
+      'Schriftverkehr (0)': null,
     },
-    'Dokumente (8)': {
-      'Allgemein (3)': [
-        'Provisionsabrechnung (2)',
-        'Lorem Ipsum Schlagwort (1)',
-      ],
-      'Bonität (5)': ['Blueberry', 'Raspberry'],
+    'Bonität (255)': {
+      'Auskünfte (12)': null,
+      'Bilanzen BWA (255)': null,
+      'Entscheidungen (43)': null,
+      'Objekt (0)': null,
+      'Schriftverkehr (0)': null,
+      'Sonstiges Genehmigungen (0)': null,
     },
-  },*/
+    'Störung (0)': {
+      'Insolvenz (12)': null,
+      'Bilanzen BWA (255)': null,
+      'Entscheidungen (43)': null,
+      'Objekt (0)': null,
+      'Schriftverkehr (0)': null,
+      'Sonstiges Genehmigungen (0)': null,
+    },
+    'Verträge (3504)': {
+      'Beeendigung (245)': null,
+      'Buchung (255)': null,
+      'Objekt Lieferant (0)': null,
+      'Provision (0)': null,
+      'Refinanzierung (0)': null,
+      'Sicherheiten (0)': null,
+      'Unterlagen (0)': null,
+      'Versicherungen (0)': null,
+    },
+  },
 };
