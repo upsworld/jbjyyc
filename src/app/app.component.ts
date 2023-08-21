@@ -20,6 +20,14 @@ const NAMES: string[] = [
   'Abrechnung/Mietkaufvertrag/01/2012 Zahlungsplan',
 ];
 
+const VERTRAGSNUMMERN: string[] = [
+  '46546466 / 1',
+  '46546466 / 2',
+  '33434333',
+  '',
+  '',
+];
+
 @Component({
   selector: 'main-app',
   templateUrl: './app.component.html',
