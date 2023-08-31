@@ -20,6 +20,9 @@ export class ExpansionPanelListComponent {
   @Input()
   titleLabel: string;
 
+  @Input()
+  expanded = false;
+
   @HostBinding('class.inline-content')
   get inlineContent() {
     return this.itemAmount === 1 && this.inlineSingleItem;

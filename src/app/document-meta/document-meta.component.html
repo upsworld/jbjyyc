@@ -64,7 +64,7 @@
 <slo-expansion-panel-list titleLabel="Datei">
     <slo-data [newStyle]="true">
         <slo-data-item label="Dateigröße">3939 KB</slo-data-item>
-        <slo-data-item label="Abgelegt am">10.01.2022</slo-data-item>
+        <slo-data-item label="Abgelegt am">01.01.2023</slo-data-item>
         <slo-data-item label="Abgelegt von">Christoph Merkelbach</slo-data-item>
     </slo-data>
 </slo-expansion-panel-list>
@@ -81,9 +81,84 @@
         <slo-data-item label="Schlagwort">Vertrag / Unterlagen</slo-data-item>
     </slo-data>
 </slo-expansion-panel-list>
-<slo-expansion-panel-list titleLabel="Änderungshistorie">
-    <div class="history-item">
-        <div class=""></div>
+<slo-expansion-panel-list titleLabel="Änderungshistorie" class="no-body-background">
+    <div class="history">
+        <div class="version">
+            <div class="version-info">
+                <span>Version 4 <small>(aktuell)</small></span>
+                <span>21.02.2023</span>
+                <slo-benutzer-display [benutzer]="{vorname: 'Christoph', nachname: 'Merkelbach'}"></slo-benutzer-display>
+            </div>
+            <div class="history-data-item">
+                <div class="values">
+                    <span class="value value--new">Annotationen entfernt</span>
+                    <mat-icon class="material-symbols-outlined">edit</mat-icon>
+                </div>
+            </div>
+            <div class="history-data-item">
+                <div class="label">Name</div>
+                <div class="values">
+                    <span class="value value--old">Abrechnung TV4 (test)</span>
+                    <mat-icon class="material-symbols-outlined">arrow_right_alt</mat-icon>
+                    <span class="value value--new">Abrechnung TV4 (2)</span>
+                </div>
+            </div>
+            <div class="history-data-item">
+                <div class="label">Rechnungsbetrag</div>
+                <div class="values">
+                    <span class="value value--old">33.300,95 €</span>
+                    <mat-icon class="material-symbols-outlined">arrow_right_alt</mat-icon>
+                    <span class="value value--new">35.300,95 €</span>
+                </div>
+            </div>
+        </div>
+        <div class="version">
+            <div class="version-info">
+                <a href="#">Version 3</a>
+                <span>15.02.2023</span>
+                <slo-benutzer-display [benutzer]="{vorname: 'Christel', nachname: 'Krause'}"></slo-benutzer-display>
+            </div>
+            <div class="history-data-item">
+                <div class="values">
+                    <span class="value value--new">Versendet</span>
+                    <mat-icon class="material-symbols-outlined">outgoing_mail</mat-icon>
+                </div>
+            </div>
+            <div class="history-data-item">
+                <div class="values">
+                    <span class="value value--new">Annotationen hinzugefügt</span>
+                    <mat-icon class="material-symbols-outlined">edit</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="version">
+            <div class="version-info">
+                <a href="#">Version 2</a>
+                <span>11.01.2023</span>
+                <slo-benutzer-display [benutzer]="{vorname: 'Stefanie', nachname: 'Nohe'}"></slo-benutzer-display>
+            </div>
+            <div class="history-data-item">
+                <div class="values">
+                    <span class="value value--new">Unterzeichnet</span>
+                    <mat-icon class="material-symbols-outlined">contract_edit</mat-icon>
+                </div>
+            </div>
+            <div class="history-data-item">
+                <div class="label">Rechnungsbetrag</div>
+                <div class="values">
+                    <span class="value value--old">15.300,95 €</span>
+                    <mat-icon class="material-symbols-outlined">arrow_right_alt</mat-icon>
+                    <span class="value value--new">33.300,95 €</span>
+                </div>
+            </div>
+        </div>
+        <div class="version">
+            <div class="version-info">
+                <a href="#">Version 1</a>
+                <span>01.01.2023</span>
+                <slo-benutzer-display [benutzer]="{vorname: 'Christoph', nachname: 'Merkelbach'}"></slo-benutzer-display>
+            </div>
+        </div>
     </div>
 </slo-expansion-panel-list>
 
