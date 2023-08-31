@@ -5,9 +5,25 @@
   gap: 4px;
 }
 
+.breadcrumb {
+  display: flex;
+  padding: 8px 48px;
+  background-color: #123250;
+  margin: -16px -16px 0;
+
+  font-size: 0.875em;
+  color: rgba(white, 0.5);
+
+  span {
+    color: white;
+    font-weight: 600;
+  }
+}
+
 .wrapper {
   background-color: white;
-  padding: 16px 32px;
+  padding: 16px 48px;
+  margin: 0 -16px;
   display: flex;
   gap: 16px;
   align-items: center;
@@ -19,21 +35,13 @@
   gap: 16px;
 }
 
-.tagline {
-  color: rgba(0, 0, 0, 0.87);
-
-  span {
-    color: rgba(0, 0, 0, 0.6);
-  }
-}
-
 .label-wrapper {
   display: flex;
   gap: 4px;
 }
 .property-label {
   font-weight: 600;
-  font-size: 0.8em;
+  font-size: 0.875em;
   padding: 0.25em 0.5em;
   background-color: #fafafa;
   color: rgba(0, 0, 0, 0.87);
