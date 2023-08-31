@@ -1,0 +1,6 @@
+<div class="label" *ngIf="displayLabel">
+  <span [class.highlight]="emphasize">{{ label }}</span>
+</div>
+<div class="content">
+  <ng-content></ng-content>
+</div>

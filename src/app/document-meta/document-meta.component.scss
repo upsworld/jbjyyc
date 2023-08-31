@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #fafafa;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border: 0 solid #fafafa;
+    border-left-width: 4px;
+    background: #fff;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #f3f3f3;
+  }
+}
+
+slo-data.new-style {
+  column-count: 1;
+}
+
+mat-form-field.mat-mdc-form-field {
+  margin: -4px -8px;
+  display: block;
+
+  &::ng-deep {
+    .mdc-text-field {
+      border-radius: 0;
+    }
+    .mdc-text-field--no-label {
+      padding-left: 8px;
+      padding-right: 8px;
+      background-color: #fafafa;
+
+      .mat-mdc-form-field-infix {
+        min-height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        mat-select,
+        textarea {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .mdc-line-ripple {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+<slo-expansion-panel-list titleLabel="Zuordnung">
+    <slo-data [newStyle]="true">
+        <slo-data-item label="Name">
+            <mat-form-field
+                    color="accent"
+                    class="example-full-width"
+                    subscriptSizing="dynamic"
+            >
+                <textarea
+                        matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="10"
+                        value="Abrechnung TV4 (2)"
+                        (click)="$event.stopPropagation()"
+                ></textarea>
+            </mat-form-field>
+        </slo-data-item>
+        <slo-data-item label="Dokumenttyp">
+            <mat-form-field
+                    color="accent"
+                    class="example-full-width"
+                    subscriptSizing="dynamic"
+            >
+                <mat-select value="Abrechnung">
+                    <mat-option value="Abrechnung"
+                    >Abrechnung
+                    </mat-option
+                    >
+                </mat-select>
+            </mat-form-field>
+        </slo-data-item>
+        <slo-data-item label="Geschäftspartner">
+            <mat-form-field subscriptSizing="dynamic" color="accent">
+                <mat-select value="424232 Meyer GmbH">
+                    <mat-option value="424232 Meyer GmbH">424232 Meyer GmbH</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </slo-data-item>
+        <slo-data-item label="Vertrag">
+            <mat-form-field subscriptSizing="dynamic" color="accent">
+                <mat-select value="24545245">
+                    <mat-option value="24545245">24545245</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </slo-data-item>
+        <slo-data-item label="Teilvertrag">
+            <mat-form-field subscriptSizing="dynamic" color="accent">
+                <mat-select value="1">
+                    <mat-option value="1">1</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </slo-data-item>
+        <slo-data-item label="Schlagwort">
+            <mat-form-field subscriptSizing="dynamic" color="accent">
+                <mat-select value="Vertrag / Unterlagen">
+                    <mat-option value="Vertrag / Unterlagen">Vertrag / Unterlagen</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </slo-data-item>
+    </slo-data>
+</slo-expansion-panel-list>
+<slo-expansion-panel-list titleLabel="Datei">
+    <slo-data [newStyle]="true">
+        <slo-data-item label="Dateigröße">3939 KB</slo-data-item>
+        <slo-data-item label="Abgelegt am">10.01.2022</slo-data-item>
+        <slo-data-item label="Abgelegt von">Christoph Merkelbach</slo-data-item>
+    </slo-data>
+</slo-expansion-panel-list>
+<slo-expansion-panel-list titleLabel="Rechnungsdaten">
+    test
+</slo-expansion-panel-list>
+<slo-expansion-panel-list titleLabel="Lorem Ipsum">
+    <slo-data [newStyle]="true">
+        <slo-data-item label="Name">Abrechnung TV4 (2)</slo-data-item>
+        <slo-data-item label="Dokumenttyp">Abrechnung</slo-data-item>
+        <slo-data-item label="Geschäftspartner">424232 Meyer GmbH</slo-data-item>
+        <slo-data-item label="Vertragsnr.">23243523 Große Bagger</slo-data-item>
+        <slo-data-item label="Teilvertragsnr.">1</slo-data-item>
+        <slo-data-item label="Schlagwort">Vertrag / Unterlagen</slo-data-item>
+    </slo-data>
+</slo-expansion-panel-list>
+<slo-expansion-panel-list titleLabel="Änderungshistorie">
+    <slo-data [newStyle]="true">
+        <slo-data-item label="Name">Abrechnung TV4 (2)</slo-data-item>
+        <slo-data-item label="Dokumenttyp">Abrechnung</slo-data-item>
+        <slo-data-item label="Geschäftspartner">424232 Meyer GmbH</slo-data-item>
+    </slo-data>
+</slo-expansion-panel-list>
+

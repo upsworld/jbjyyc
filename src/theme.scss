@@ -10,9 +10,79 @@
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$default-app-primary: (
+        50: #e3e6ea,
+        100: #b8c2cb,
+        200: #8999a8,
+        300: #597085,
+        400: #36516a,
+        500: #123250,
+        600: #102d49,
+        700: #0d2640,
+        800: #0a1f37,
+        900: #051327,
+        A100: #6396ff,
+        A200: #3074ff,
+        A400: #0053fc,
+        A700: #004ae2,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $light-primary-text,
+                400: $light-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $light-primary-text,
+                A400: $light-primary-text,
+                A700: $light-primary-text,
+        ),
+);
+
+$default-app-accent: (
+        50: #e7f8f2,
+        100: #c3edde,
+        200: #9be1c8,
+        300: #73d5b2,
+        400: #55cca2,
+        500: #37c391,
+        600: #31bd89,
+        700: #2ab57e,
+        800: #23ae74,
+        900: #16a162,
+        A100: #d4ffea,
+        A200: #a1ffd2,
+        A400: #6effb9,
+        A700: #55ffac,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $dark-primary-text,
+                400: $dark-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $dark-primary-text,
+                A400: $dark-primary-text,
+                A700: $dark-primary-text,
+        ),
+);
+
 // hue. Available color palettes: https://material.io/design/color/
-$theme-primary: mat.define-palette(mat.$indigo-palette);
-$theme-accent: mat.define-palette(mat.$green-palette);
+$theme-primary: mat.define-palette($default-app-primary);
+$theme-accent: mat.define-palette($default-app-accent);
 
 // The warn palette is optional (defaults to red).
 $theme-warn: mat.define-palette(mat.$red-palette);

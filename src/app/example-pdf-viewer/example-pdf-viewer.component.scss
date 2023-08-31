@@ -1,0 +1,25 @@
+:host {
+  flex-grow: 1;
+  height: 100%;
+
+  &::ng-deep {
+    ngx-extended-pdf-viewer #toolbarContainer,
+    ngx-extended-pdf-viewer .findbar,
+    ngx-extended-pdf-viewer .secondaryToolbar,
+    ngx-extended-pdf-viewer .editorParamsToolbar {
+      background-color: white;
+    }
+
+    #viewer {
+      margin: 16px 0;
+    }
+
+    ngx-extended-pdf-viewer .toolbar {
+      border-bottom: 4px solid #fafafa;
+    }
+
+    ngx-extended-pdf-viewer #toolbarViewer {
+      padding: 16px 32px;
+    }
+  }
+}

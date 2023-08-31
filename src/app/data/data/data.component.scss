@@ -1,0 +1,155 @@
+@use 'sass:math';
+
+:host {
+
+  &.old-style {
+    font-size: 0.9375rem;
+  }
+
+  &.new-style {
+    font-size: 1em;
+  }
+
+  display: block;
+  width: 100%;
+
+  &.double-column {
+    column-count: 2;
+    column-gap: 2.5rem;
+    column-width: 16.125rem;
+  }
+
+  &.one-line-details {
+    ::ng-deep slo-data-item {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 2px 0;
+
+      .label {
+        width: 40%;
+      }
+
+      .content {
+        width: 60%;
+      }
+    }
+  }
+
+  &.first-line-as-header {
+    ::ng-deep slo-data-item {
+      .content {
+        font-weight: normal;
+      }
+    }
+
+    ::ng-deep slo-data-item:first-child {
+      .content,
+      .label {
+        font-weight: bolder;
+      }
+    }
+  }
+
+  &.full-width {
+    ::ng-deep slo-data-item {
+      .content {
+        width: 100%;
+      }
+
+      .label {
+        width: auto;
+      }
+    }
+  }
+
+  $column-gap: 32px;
+  $label-gap: 16px;
+  $label-size-ratio: math.div(2, 5);
+
+  &.new-style {
+    column-count: 2;
+    column-gap: $column-gap;
+
+    &:first-child {
+      margin-top: -(16px) !important;
+    }
+
+    // TODO: After the redesign is done, reconsider that the styling is done here and not in slo-data-item
+    ::ng-deep slo-data-item {
+      display: flex;
+      hyphens: auto;
+      flex-direction: row;
+
+      &.column-break-after {
+        break-after: column;
+      }
+
+      &.less-vertical-margin {
+        .content:not(:empty),
+        .label {
+          padding-top: 4px;
+        }
+      }
+
+      &:not(.less-vertical-margin) {
+        .content:not(:empty),
+        .label {
+          padding-top: 16px;
+        }
+      }
+
+      .label,
+      .content {
+        // This is a hack to avoid column-break within old Firefox versions.
+        // See https://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element
+        display: table;
+      }
+
+      .content {
+        flex-basis: 100% * (1 - $label-size-ratio);
+        flex-grow: 1;
+      }
+
+      &.bold-content {
+        .content {
+          font-weight: 600;
+        }
+      }
+
+      .label {
+        margin-right: $label-gap;
+        flex-basis: 100% * $label-size-ratio;
+      }
+    }
+
+    &.full-width {
+      column-count: 1;
+
+      ::ng-deep slo-data-item .label {
+        flex-basis: calc((100% - 2 * #{$label-gap} - #{$column-gap}) * #{$label-size-ratio} / 2);
+        // label should have same width as those in 2-column-standard layout which leads to this formula
+        // basically its half the ratio applied above minus the applied gaps
+        // (1 column gap in the middle and 2 label gaps in each column)
+      }
+    }
+  }
+
+  &.new-style {
+    ::ng-deep slo-data-item {
+      .content {
+        color: rgba(0, 0, 0, 0.87);
+      }
+
+      &.label-content {
+        .content {
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      .label {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}

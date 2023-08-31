@@ -1,0 +1,11 @@
+<app-document-header></app-document-header>
+<div class="document-content">
+    <app-document-meta></app-document-meta>
+    <app-example-pdf-viewer (click)="showBottomSheet()"></app-example-pdf-viewer>
+</div>
+<ng-template>
+    <div class="document-buttons">
+        <button mat-stroked-button (click)="hideBottomSheet()">Änderungen zurücksetzen</button>
+        <button mat-raised-button (click)="hideBottomSheet()" color="accent">Neue Version speichern</button>
+    </div>
+</ng-template>

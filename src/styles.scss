@@ -1,8 +1,9 @@
 body {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
-  padding: 32px;
+  padding: 16px;
   -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
 
 html,
@@ -12,4 +13,27 @@ body {
 
 *:not(.mat-icon) {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+a {
+  color: #37c391;
+}
+
+mat-bottom-sheet-container.mat-bottom-sheet-container {
+  padding: 0;
+  background-color: #fafafa;
+  border-radius: 0;
+}
+
+button.mdc-button {
+  text-transform: uppercase;
+  border-radius: 0;
+
+  &.mat-mdc-raised-button {
+    color: white;
+  }
+}
+
+mat-expansion-panel.mat-expansion-panel {
+  border-radius: 0;
 }

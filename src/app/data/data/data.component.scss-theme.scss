@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin slo-data($theme) {
+  $foreground: map.get($theme, foreground);
+
+  slo-data {
+    &.new-style {
+      slo-data-item {
+        .content {
+          color: mat.get-color-from-palette($foreground, text);
+        }
+
+        &.label-content {
+          .content {
+            color: mat.get-color-from-palette($foreground, secondary-text);
+          }
+        }
+
+        .label {
+          color: mat.get-color-from-palette($foreground, secondary-text);
+        }
+      }
+    }
+  }
+}

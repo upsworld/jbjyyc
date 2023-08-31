@@ -1,0 +1,32 @@
+:host {
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  :host-context(.old-style) {
+    // This is a hack to avoid column-break within old Firefox versions.
+    // See https://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element
+    display: table;
+    margin-bottom: 1.25rem;
+  }
+}
+
+:host-context(.old-style) {
+  .label,
+  .content {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    font-weight: 600;
+  }
+
+  .label {
+    display: inline-block;
+    min-width: 180px;
+    padding-right: 10px;
+    opacity: 0.8;
+  }
+}

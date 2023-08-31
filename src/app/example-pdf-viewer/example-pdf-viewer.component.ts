@@ -4,7 +4,7 @@ import { NgxExtendedPdfViewerService, pdfDefaultOptions } from 'ngx-extended-pdf
 @Component({
   selector: 'app-example-pdf-viewer',
   templateUrl: './example-pdf-viewer.component.html',
-  styleUrls: ['./example-pdf-viewer.component.css'],
+  styleUrls: ['./example-pdf-viewer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplePdfViewerComponent {

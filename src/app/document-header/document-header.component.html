@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="tagline">
+        <span>283828 Meyer GmbH</span> / <span>4232233/1 Große Bagger</span> / <span>Vertrag</span> / <span>Unterlagen</span>
+         <!--<a href="#">283828 Meyer GmbH</a> / <a href="#">4232233/1 Große Bagger</a> / <a href="#">Vertrag</a> / <a href="#">Unterlagen</a>//-->
+    </div>
+</div>
+<div class="wrapper">
+    <div class="title-wrapper">
+        <div class="label-wrapper">
+            <span class="property-label">Original</span>
+            <span class="property-label">Abrechnung</span>
+            <span class="property-label">Irgendein Keyword</span>
+        </div>
+        <div class="title">
+            <mat-icon class="material-symbols-outlined">description</mat-icon>
+            Abrechnung TV4 (2)
+
+            <mat-form-field
+                    class="version-select"
+                    subscriptSizing="dynamic"
+            >
+                <mat-select value="Version 4" [panelWidth]="null">
+                    <mat-select-trigger>
+                        <span>Version 4 <small>(aktuell)</small></span>
+                    </mat-select-trigger>
+                    <mat-option value="Version 4">
+                        <span>Version 4 <small>(aktuell)</small></span>
+                        <small>21.02.2023</small>
+                        <slo-benutzer-display [benutzer]="{vorname: 'Christoph', nachname: 'Merkelbach'}"></slo-benutzer-display>
+                    </mat-option>
+                    <mat-option value="Version 3">
+                        <span>Version 3</span>
+                        <small>15.02.2023</small>
+                        <slo-benutzer-display [benutzer]="{vorname: 'Christel', nachname: 'Krause'}"></slo-benutzer-display>
+                    </mat-option>
+                    <mat-option value="Version 2">
+                        <span>Version 2</span>
+                        <small>11.12.2023</small>
+                        <slo-benutzer-display [benutzer]="{vorname: 'Stefanie', nachname: 'Nohe'}"></slo-benutzer-display>
+                    </mat-option>
+                    <mat-option value="Version 1">
+                        <span>Version 1</span>
+                        <small>01.01.2023</small>
+                        <slo-benutzer-display [benutzer]="{vorname: 'Christoph', nachname: 'Merkelbach'}"></slo-benutzer-display>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="status-icons">
+        <mat-icon class="material-symbols-outlined">contract_edit</mat-icon>
+        <mat-icon class="material-symbols-outlined">mark_email_read</mat-icon>
+        <mat-icon class="material-symbols-outlined" color="accent">outgoing_mail</mat-icon>
+    </div>
+
+    <div class="ablagedatum">
+        21.2.2023
+    </div>
+
+    <button [matMenuTriggerFor]="menu" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Unterzeichnen</button>
+        <button mat-menu-item>Versenden</button>
+        <button mat-menu-item>Genehmigen</button>
+        <button mat-menu-item>Verschenken</button>
+        <button mat-menu-item>Verbrennen</button>
+    </mat-menu>
+</div>

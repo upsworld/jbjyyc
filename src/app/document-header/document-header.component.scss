@@ -1,0 +1,72 @@
+:host {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wrapper {
+  background-color: white;
+  padding: 16px 32px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tagline {
+  color: rgba(0, 0, 0, 0.87);
+
+  span {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.label-wrapper {
+  display: flex;
+  gap: 4px;
+}
+.property-label {
+  font-weight: 600;
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.title {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-weight: 600;
+  color: #123250;
+  font-size: 20px;
+}
+
+mat-option::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-right: 8px;
+
+  span {
+    white-space: nowrap;
+    flex: 150px 0 0;
+  }
+}
+.status-icons {
+  gap: 16px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.ablagedatum {
+  margin-left: 64px;
+}
