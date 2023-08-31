@@ -63,3 +63,70 @@ mat-form-field.mat-mdc-form-field {
     }
   }
 }
+
+.history, .version {
+  display: flex;
+  flex-direction: column;
+}
+
+.history {
+  gap: 4px;
+}
+
+.version {
+  gap: 16px;
+  background-color: white;
+  padding: 16px 32px;
+}
+
+.version-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  > *:first-child {
+    flex-grow: 1;
+    font-weight: 600;
+  }
+
+  > span:first-child {
+    color: #123250;
+  }
+}
+
+.history-data-item {
+  display: flex;
+  flex-direction: column;
+
+  mat-icon {
+    color: rgba(0, 0, 0, 0.87);
+    margin: -2px 0;
+  }
+
+
+  .label {
+    color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+  }
+
+  .values {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .value {
+    color: rgba(0, 0, 0, 0.87);
+
+    &--old {
+      text-decoration: line-through;
+      font-size: 0.875em;
+      flex: 40% 1 1;
+    }
+
+    &--new {
+      flex: 60% 1 1;
+    }
+  }
+}
