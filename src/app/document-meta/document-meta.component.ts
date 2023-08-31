@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-document-meta',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./document-meta.component.scss']
 })
 export class DocumentMetaComponent {
-
+  @Output() metaChanged = new EventEmitter();
 }

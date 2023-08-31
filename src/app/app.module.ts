@@ -27,6 +27,7 @@ import { BenutzerDisplayComponent } from "./benutzer-display/benutzer-display.co
 import { AppRoutingModule } from './app-routing.module';
 import { DocumentListComponent } from './document-list/document-list.component';
 import { MatMenuModule } from "@angular/material/menu";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 /* the AppModule class with the @NgModule decorator */
 @NgModule({
@@ -50,7 +51,8 @@ import { MatMenuModule } from "@angular/material/menu";
         MatBottomSheetModule,
         BenutzerDisplayComponent,
         AppRoutingModule,
-        MatMenuModule
+        MatMenuModule,
+        MatTooltipModule
     ],
   providers: [],
   bootstrap: [AppComponent],

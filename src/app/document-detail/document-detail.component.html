@@ -1,7 +1,7 @@
 <app-document-header></app-document-header>
 <div class="document-content">
-    <app-example-pdf-viewer (click)="showBottomSheet()"></app-example-pdf-viewer>
-    <app-document-meta></app-document-meta>
+    <app-example-pdf-viewer></app-example-pdf-viewer>
+    <app-document-meta (metaChanged)="showBottomSheet()"></app-document-meta>
 </div>
 <ng-template>
     <div class="document-buttons">

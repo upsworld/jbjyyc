@@ -5,6 +5,7 @@
                     color="accent"
                     class="example-full-width"
                     subscriptSizing="dynamic"
+                    (change)="metaChanged.emit()"
             >
                 <textarea
                         matInput
@@ -68,17 +69,26 @@
         <slo-data-item label="Abgelegt von">Christoph Merkelbach</slo-data-item>
     </slo-data>
 </slo-expansion-panel-list>
-<slo-expansion-panel-list titleLabel="Rechnungsdaten">
-    test
+<slo-expansion-panel-list titleLabel="Dokumentbeschreibung">
+    Irgendein Freitext Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 </slo-expansion-panel-list>
-<slo-expansion-panel-list titleLabel="Lorem Ipsum">
+<slo-expansion-panel-list titleLabel="Rechnungsdaten">
     <slo-data [newStyle]="true">
-        <slo-data-item label="Name">Abrechnung TV4 (2)</slo-data-item>
-        <slo-data-item label="Dokumenttyp">Abrechnung</slo-data-item>
-        <slo-data-item label="Geschäftspartner">424232 Meyer GmbH</slo-data-item>
-        <slo-data-item label="Vertragsnr.">23243523 Große Bagger</slo-data-item>
-        <slo-data-item label="Teilvertragsnr.">1</slo-data-item>
-        <slo-data-item label="Schlagwort">Vertrag / Unterlagen</slo-data-item>
+        <slo-data-item label="Rechnungsbetrag">
+            <mat-form-field
+                    color="accent"
+                    class="example-full-width"
+                    subscriptSizing="dynamic"
+            >
+                <input
+                        matInput
+                        cdkTextareaAutosize
+                        value="35.300,95"
+                        (click)="$event.stopPropagation()"
+                />
+                <span matTextSuffix>€</span>
+            </mat-form-field>
+        </slo-data-item>
     </slo-data>
 </slo-expansion-panel-list>
 <slo-expansion-panel-list titleLabel="Änderungshistorie" class="no-body-background">
