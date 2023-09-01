@@ -42,14 +42,13 @@ export class DocumentListComponent {
   @HostListener('dragenter', ['$event ']) onDragenter(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    console.log('dragenter');
     this.isDragging = true;
   }
 
-  @HostListener('drop', ['$event ']) onDrop(evt: any) {
+  onDrop(evt: any) {
+    this.uploadDialog()
     evt.preventDefault();
     evt.stopPropagation();
-    //this.openDocument();
     this.isDragging = false;
   }
   constructor(private dialog: MatDialog, private router: Router) {
@@ -80,13 +79,11 @@ export class DocumentListComponent {
     );
   }
 
-  openDialog() {
-    this.dialog.open(ExamplePdfViewerComponent);
+  uploadDialog() {
+    this.dialog.open(SlcAblageComponent, { data: [this.documents[0], this.documents[1]]});
   }
 
   openDocument(document: SlDocuments) {
-    //const width =
-
     const url = this.router.createUrlTree(['./detail'])
     window.open(
         url.toString(),
@@ -100,7 +97,6 @@ export class DocumentListComponent {
   onDragleave(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    console.log('dragleave');
     this.isDragging = false;
   }
 }
